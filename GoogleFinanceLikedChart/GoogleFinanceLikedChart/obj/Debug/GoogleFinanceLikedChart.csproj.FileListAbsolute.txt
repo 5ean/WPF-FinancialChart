@@ -1,1 +1,2 @@
 D:\GitHub\Repo\WPF\GoogleFinanceLikedChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\bin\Debug\GoogleFinanceLikedChart.exe.config
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\bin\Debug\GoogleFinanceLikedChart.exe.config
