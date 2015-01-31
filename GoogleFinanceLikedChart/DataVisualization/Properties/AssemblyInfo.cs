@@ -14,7 +14,7 @@ using System.Windows;
 [assembly: AssemblyProduct("WPF Toolkit")]
 [assembly: AssemblyFileVersion("3.5.50211.1")]
 [assembly: AssemblyVersion("3.5.40128.1")]
-
+[assembly: SecurityRules(SecurityRuleSet.Level1)]
 // WPF-only settings
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None,
