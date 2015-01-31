@@ -1,8 +1,12 @@
 ﻿<Window x:Class="GoogleFinanceLikedChart.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        xmlns:charting1="clr-namespace:System.Windows.Controls.DataVisualization.Charting; assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:datavis ="clr-namespace:System.Windows.Controls.DataVisualization; assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:local ="clr-namespace:GoogleFinanceLikedChart"
+        Title="MainWindow" WindowState="Normal" Width="700">
+    <Window.Resources>
+        <local:ScaleConverter x:Key="ScaleConverter"/>
+        <local:VisibilityConverter x:Key="VisibilityConverter"/>
+    </Window.Resources>
 </Window>
