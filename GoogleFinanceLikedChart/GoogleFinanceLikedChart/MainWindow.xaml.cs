@@ -24,5 +24,50 @@ namespace GoogleFinanceLikedChart
         {
             InitializeComponent();
         }
+
+        private void PriceCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PriceCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ave20CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ave20CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ave60CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ave60CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ave120CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ave120CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dateWindow_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
