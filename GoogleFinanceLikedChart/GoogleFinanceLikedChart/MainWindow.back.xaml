@@ -1,0 +1,65 @@
+﻿<Window x:Class="GoogleFinanceLikedChart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:charting1="clr-namespace:System.Windows.Controls.DataVisualization.Charting; assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:datavis ="clr-namespace:System.Windows.Controls.DataVisualization; assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:local ="clr-namespace:GoogleFinanceLikedChart"
+        Title="MainWindow" WindowState="Normal" Width="700">
+    <Window.Resources>
+        <local:ScaleConverter x:Key="ScaleConverter"/>
+        <local:VisibilityConverter x:Key="VisibilityConverter"/>
+        <Style x:Key="PricePolyLineSyple" TargetType="Polyline">
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Stroke" Value="Blue"/>
+        </Style>
+        <Style x:Key="Trend20PolylineStyle" TargetType="Polyline">
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Stroke" Value="#FFE0AE04"/>
+        </Style>
+        <Style x:Key="Trend60PolylineStyle" TargetType="Polyline">
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Stroke" Value="Green"/>
+        </Style>
+        <Style x:Key="Trend120PolylineStyle" TargetType="Polyline">
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Stroke" Value="Red"/>
+        </Style>
+        <Style x:Key="GridLineStyle" TargetType="Line">
+            <Setter Property="Stroke" Value="#20000000"/>
+        </Style>
+        <Style x:Key="EllipseStyle" TargetType="Ellipse">
+            <Setter Property="Height" Value="8"/>
+            <Setter Property="Width" Value="8"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Stroke" Value="Red"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,11,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="23"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="PART_HeaderView" Grid.Row="0" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Name="PriceCheckBox" Content="Price" Grid.Column="0" Margin="9,0,0,0" VerticalAlignment="Top" Height="21" Foreground="Blue" FontWeight="Bold" Checked="PriceCheckBox_Checked" Unchecked="PriceCheckBox_Unchecked"/>
+            <CheckBox Name="Ave20CheckBox" Content="20 Day Nove Trend" Grid.Column="1" Margin="9,0,0,0" VerticalAlignment="Center" Height="21" Foreground="#FFE0AE04"  FontWeight="Bold" Checked="Ave20CheckBox_Checked" Unchecked="Ave20CheckBox_Unchecked"/>
+            <CheckBox Name="Ave60CheckBox" Content="60 Day Nove Trend" Grid.Column="2" Margin="9,0,0,0" VerticalAlignment="Center" Height="21" Foreground="Green"  FontWeight="Bold" Checked="Ave60CheckBox_Checked" Unchecked="Ave60CheckBox_Unchecked"/>
+            <CheckBox Name="Ave120CheckBox" Content="120 Day Nove Trend" Grid.Column="3" Margin="9,0,0,0" VerticalAlignment="Center" Height="21" Foreground="Red"  FontWeight="Bold" Checked="Ave120CheckBox_Checked" Unchecked="Ave120CheckBox_Unchecked"/>
+            <ComboBox Name="dateWindow" HorizontalAlignment="Left" Margin="10,-1,1,1" VerticalAlignment="Top" Width="120" Grid.Column="4" SelectionChanged="dateWindow_SelectionChanged">
+                <ComboBoxItem>All</ComboBoxItem>
+                <ComboBoxItem>1 Year</ComboBoxItem>
+                <ComboBoxItem>6 Months</ComboBoxItem>
+                <ComboBoxItem>3 Months</ComboBoxItem>
+                <ComboBoxItem>1 Month</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        
+    </Grid>
+</Window>

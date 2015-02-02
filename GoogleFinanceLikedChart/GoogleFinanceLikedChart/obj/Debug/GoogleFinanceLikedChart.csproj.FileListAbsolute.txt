@@ -1,2 +1,5 @@
 D:\GitHub\Repo\WPF\GoogleFinanceLikedChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\bin\Debug\GoogleFinanceLikedChart.exe.config
 D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\bin\Debug\GoogleFinanceLikedChart.exe.config
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\obj\Debug\GoogleFinanceLikedChart.csprojResolveAssemblyReference.cache
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\obj\Debug\App.g.cs
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\GoogleFinanceLikedChart\obj\Debug\GoogleFinanceLikedChart_MarkupCompile.cache

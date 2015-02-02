@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 
-namespace GoogleFinanceLikedChart
+namespace FinancialHistoricLineChart
 {
     public class AdornedControl : ContentControl
     {
@@ -300,7 +300,7 @@ namespace GoogleFinanceLikedChart
         {
             this.child = adornerChildElement;
             this.horizontalAdornerPlacement = horizontalAdornerPlacement;
-            this.vertialAdornerPlacement = vertialAdornerPlacement;
+            this.vertialAdornerPlacement = verticalAdornerPlacement;
 
             this.offsetX = offsetX;
             this.offsetY = offsetY;
@@ -509,7 +509,7 @@ namespace GoogleFinanceLikedChart
  	        return this.child;
         }
 
-        protected override IEnumerator LogicalChildern
+        protected override IEnumerator LogicalChildren
         {
             get
             {

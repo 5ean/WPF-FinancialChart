@@ -1,14 +1,14 @@
-﻿<Window x:Class="GoogleFinanceLikedChart.MainWindow"
+﻿<Window x:Class="FinancialHistoricLineChart.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:charting1="clr-namespace:System.Windows.Controls.DataVisualization.Charting; assembly=System.Windows.Controls.DataVisualization.Toolkit"
-        xmlns:datavis ="clr-namespace:System.Windows.Controls.DataVisualization; assembly=System.Windows.Controls.DataVisualization.Toolkit"
-        xmlns:local ="clr-namespace:GoogleFinanceLikedChart"
+        xmlns:charting1="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:local="clr-namespace:FinancialHistoricLineChart"
         Title="MainWindow" WindowState="Normal" Width="700">
     <Window.Resources>
         <local:ScaleConverter x:Key="ScaleConverter"/>
         <local:VisibilityConverter x:Key="VisibilityConverter"/>
-        <Style x:Key="PricePolyLineSyple" TargetType="Polyline">
+        <Style x:Key="PricePolyLineStyle" TargetType="Polyline">
             <Setter Property="StrokeThickness" Value="2"/>
             <Setter Property="Stroke" Value="Blue"/>
         </Style>
@@ -60,6 +60,181 @@
                 <ComboBoxItem>1 Month</ComboBoxItem>
             </ComboBox>
         </Grid>
-        
+        <charting1:Chart Name="GoogleFinanceChart" Grid.Row="1" Title="APPL Move Trend" Width="auto" Height="Auto" Margin="0,2,-9,-5" Grid.RowSpan="2" MouseMove="GoogleFinanceChart_MouseMove">
+            <charting1:LineSeries Name="Price" IsSelectionEnabled="True"
+                                  PolylineStyle="{StaticResource PricePolyLineStyle}"
+                                  Title="Price"
+                                  ItemsSource="{Binding}"
+                                  IndependentValueBinding="{Binding Date}"
+                                  DependentValueBinding="{Binding ClosePrice}">
+                <charting1:LineSeries.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.206"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </charting1:LineSeries.RenderTransform>
+                <charting1:LineSeries.DataPointStyle>
+                    <Style TargetType="charting1:LineDataPoint">
+                        <Setter Property="Background" Value="#0077CC"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="charting1:LineDataPoint">
+                                    <StackPanel>
+                                        <local:AdornedControl
+                                            x:Name="adornedControl"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            HorizontalAdornerPlacement="Outside"
+                                            VerticalAdornerPlacement="Outside">
+                                            <local:AdornedControl.IsAdornerVisible>
+                                                <MultiBinding Converter="{StaticResource VisibilityConverter}">
+                                                    <Binding Path="PointVisibality"/>
+                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                </MultiBinding>
+                                            </local:AdornedControl.IsAdornerVisible>
+                                            <local:AdornedControl.AdornerContent>
+                                                <Canvas
+                                                    x:Name="adornerCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="20">
+                                                    <TextBlock Canvas.Left="10" Canvas.Top="5" Width="Auto" Height="20" Text="{Binding ClosePrice, StringFormat={}{0:C}}">
+                                                        <TextBlock.Background>
+                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                <GradientStop Color="White" Offset="0"></GradientStop>
+                                                                <GradientStop Color="Silver" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </TextBlock.Background>
+                                                    </TextBlock>
+                                                </Canvas>
+                                            </local:AdornedControl.AdornerContent>
+                                            <Ellipse Visibility="{Binding PointVisibility}" Style="{StaticResource EllipseStyle}"/>
+                                        </local:AdornedControl>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </charting1:LineSeries.DataPointStyle>
+            </charting1:LineSeries>
+            <charting1:LineSeries Name="Trend20" IsSelectionEnabled="True"
+                                  PolylineStyle="{StaticResource Trend20PolylineStyle}"
+                                  Title="20 Day Move Trend"
+                                  ItemsSource="{Binding}"
+                                  IndependentValueBinding="{Binding Date}"
+                                  DependentValueBinding="{Binding Ave20}">
+                <charting1:LineSeries.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.206"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </charting1:LineSeries.RenderTransform>
+                <charting1:LineSeries.DataPointStyle>
+                    <Style TargetType="charting1:LineDataPoint">
+                        <Setter Property="Background" Value="#FFE0AE04"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="charting1:LineDataPoint">
+                                    <StackPanel>
+                                        <local:AdornedControl
+                                            x:Name="adornedControl"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            HorizontalAdornerPlacement="Outside"
+                                            VerticalAdornerPlacement="Outside">
+                                            <local:AdornedControl.IsAdornerVisible>
+                                                <MultiBinding Converter="{StaticResource VisibilityConverter}">
+                                                    <Binding Path="PointVisibality"/>
+                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                </MultiBinding>
+                                            </local:AdornedControl.IsAdornerVisible>
+                                            <local:AdornedControl.AdornerContent>
+                                                <Canvas
+                                                    x:Name="adornerCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="20">
+                                                    <TextBlock Canvas.Left="10" Canvas.Top="5" Width="Auto" Height="20" Text="{Binding ClosePrice, StringFormat={}{0:C}}">
+                                                        <TextBlock.Background>
+                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                <GradientStop Color="White" Offset="0"></GradientStop>
+                                                                <GradientStop Color="Silver" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </TextBlock.Background>
+                                                    </TextBlock>
+                                                </Canvas>
+                                            </local:AdornedControl.AdornerContent>
+                                            <Ellipse Visibility="{Binding PointVisibility}" Style="{StaticResource EllipseStyle}"/>
+                                        </local:AdornedControl>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </charting1:LineSeries.DataPointStyle>
+            </charting1:LineSeries>
+            <charting1:LineSeries Name="Trend60" IsSelectionEnabled="True"
+                                  PolylineStyle="{StaticResource Trend60PolylineStyle}"
+                                  Title="60 Day Move Trend"
+                                  ItemsSource="{Binding}"
+                                  IndependentValueBinding="{Binding Date}"
+                                  DependentValueBinding="{Binding Ave60}">
+                <charting1:LineSeries.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.206"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </charting1:LineSeries.RenderTransform>
+                <charting1:LineSeries.DataPointStyle>
+                    <Style TargetType="charting1:LineDataPoint">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="charting1:LineDataPoint">
+                                    <StackPanel>
+                                        <local:AdornedControl
+                                            x:Name="adornedControl"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            HorizontalAdornerPlacement="Outside"
+                                            VerticalAdornerPlacement="Outside">
+                                            <local:AdornedControl.IsAdornerVisible>
+                                                <MultiBinding Converter="{StaticResource VisibilityConverter}">
+                                                    <Binding Path="PointVisibality"/>
+                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                </MultiBinding>
+                                            </local:AdornedControl.IsAdornerVisible>
+                                            <local:AdornedControl.AdornerContent>
+                                                <Canvas
+                                                    x:Name="adornerCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="20">
+                                                    <TextBlock Canvas.Left="10" Canvas.Top="5" Width="Auto" Height="20" Text="{Binding ClosePrice, StringFormat={}{0:C}}">
+                                                        <TextBlock.Background>
+                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                <GradientStop Color="White" Offset="0"></GradientStop>
+                                                                <GradientStop Color="Silver" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </TextBlock.Background>
+                                                    </TextBlock>
+                                                </Canvas>
+                                            </local:AdornedControl.AdornerContent>
+                                            <Ellipse Visibility="{Binding PointVisibility}" Style="{StaticResource EllipseStyle}"/>
+                                        </local:AdornedControl>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </charting1:LineSeries.DataPointStyle>
+            </charting1:LineSeries>
+        </charting1:Chart>
     </Grid>
 </Window>
