@@ -16,7 +16,7 @@ namespace FinancialHistoricLineChart
         public double? Ave20 { get; set; }
         public double? Ave60 { get; set; }
         public double? Ave120 { get; set; }
-        public int volumn { get; set; }
+        public int Volume { get; set; }
         private Visibility _visibility = Visibility.Hidden;
         public Visibility PointVisibility
         {
