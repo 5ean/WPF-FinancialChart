@@ -235,6 +235,85 @@
                     </Style>
                 </charting1:LineSeries.DataPointStyle>
             </charting1:LineSeries>
+            <charting1:LineSeries Name="Trend120" IsSelectionEnabled="True"
+                                  PolylineStyle="{StaticResource Trend120PolylineStyle}"
+                                  Title="60 Day Move Trend"
+                                  ItemsSource="{Binding}"
+                                  IndependentValueBinding="{Binding Date}"
+                                  DependentValueBinding="{Binding Ave120}">
+                <charting1:LineSeries.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.206"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </charting1:LineSeries.RenderTransform>
+                <charting1:LineSeries.DataPointStyle>
+                    <Style TargetType="charting1:LineDataPoint">
+                        <Setter Property="Background" Value="Red"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="charting1:LineDataPoint">
+                                    <StackPanel>
+                                        <local:AdornedControl
+                                            x:Name="adornedControl"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            HorizontalAdornerPlacement="Outside"
+                                            VerticalAdornerPlacement="Outside">
+                                            <local:AdornedControl.IsAdornerVisible>
+                                                <MultiBinding Converter="{StaticResource VisibilityConverter}">
+                                                    <Binding Path="PointVisibality"/>
+                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                </MultiBinding>
+                                            </local:AdornedControl.IsAdornerVisible>
+                                            <local:AdornedControl.AdornerContent>
+                                                <Canvas
+                                                    x:Name="adornerCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="20">
+                                                    <TextBlock Canvas.Left="10" Canvas.Top="5" Width="Auto" Height="20" Text="{Binding ClosePrice, StringFormat={}{0:C}}">
+                                                        <TextBlock.Background>
+                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                                <GradientStop Color="White" Offset="0"></GradientStop>
+                                                                <GradientStop Color="Silver" Offset="1"/>
+                                                            </LinearGradientBrush>
+                                                        </TextBlock.Background>
+                                                    </TextBlock>
+                                                </Canvas>
+                                            </local:AdornedControl.AdornerContent>
+                                            <Ellipse Visibility="{Binding PointVisibility}" Style="{StaticResource EllipseStyle}"/>
+                                        </local:AdornedControl>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </charting1:LineSeries.DataPointStyle>
+            </charting1:LineSeries>
+            <charting1:Chart.LegendStyle>
+                <Style TargetType="datavis:Legend">
+                    <Setter Property="Width" Value="0"/>
+                </Style>
+            </charting1:Chart.LegendStyle>
+            <charting1:Chart.Axes>
+                <charting1:DateTimeAxis Name="xAxis" Orientation="X" ShowGridLines="True" IntervalType="Months" Interval="1" GridLineStyle="{StaticResource GridLineStyle}">
+                    <charting1:DateTimeAxis.AxisLabelStyle>
+                        <Style TargetType="{x:Type charting1:AxisLabel}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="charting1:AxisLabel">
+                                        <TextBlock DataContext="{TemplateBinding FormattedContent}" Text="{Binding Converter={StaticResource ScaleConverter}}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </charting1:DateTimeAxis.AxisLabelStyle>
+                </charting1:DateTimeAxis>
+                <charting1:LinearAxis Name="yAxis" Orientation="Y" ShowGridLines="False" GridLineStyle="{StaticResource GridLineStyle}"/>
+            </charting1:Chart.Axes>
         </charting1:Chart>
     </Grid>
 </Window>
