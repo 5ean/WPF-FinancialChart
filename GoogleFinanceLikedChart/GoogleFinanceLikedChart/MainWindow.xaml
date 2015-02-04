@@ -93,8 +93,8 @@
                                             VerticalAdornerPlacement="Outside">
                                             <local:AdornedControl.IsAdornerVisible>
                                                 <MultiBinding Converter="{StaticResource VisibilityConverter}">
-                                                    <Binding Path="PointVisibality"/>
-                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                    <Binding Path="PointVisibility"/>
+                                                    <Binding ElementName="Price" Path="Visibility"/>
                                                 </MultiBinding>
                                             </local:AdornedControl.IsAdornerVisible>
                                             <local:AdornedControl.AdornerContent>
@@ -151,8 +151,8 @@
                                             VerticalAdornerPlacement="Outside">
                                             <local:AdornedControl.IsAdornerVisible>
                                                 <MultiBinding Converter="{StaticResource VisibilityConverter}">
-                                                    <Binding Path="PointVisibality"/>
-                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                    <Binding Path="PointVisibility"/>
+                                                    <Binding ElementName="Trend20" Path="Visibility"/>
                                                 </MultiBinding>
                                             </local:AdornedControl.IsAdornerVisible>
                                             <local:AdornedControl.AdornerContent>
@@ -209,8 +209,8 @@
                                             VerticalAdornerPlacement="Outside">
                                             <local:AdornedControl.IsAdornerVisible>
                                                 <MultiBinding Converter="{StaticResource VisibilityConverter}">
-                                                    <Binding Path="PointVisibality"/>
-                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                    <Binding Path="PointVisibility"/>
+                                                    <Binding ElementName="Trend60" Path="Visibility"/>
                                                 </MultiBinding>
                                             </local:AdornedControl.IsAdornerVisible>
                                             <local:AdornedControl.AdornerContent>
@@ -267,8 +267,8 @@
                                             VerticalAdornerPlacement="Outside">
                                             <local:AdornedControl.IsAdornerVisible>
                                                 <MultiBinding Converter="{StaticResource VisibilityConverter}">
-                                                    <Binding Path="PointVisibality"/>
-                                                    <Binding ElementName="Pice" Path="Visibility"/>
+                                                    <Binding Path="PointVisibility"/>
+                                                    <Binding ElementName="Trend120" Path="Visibility"/>
                                                 </MultiBinding>
                                             </local:AdornedControl.IsAdornerVisible>
                                             <local:AdornedControl.AdornerContent>

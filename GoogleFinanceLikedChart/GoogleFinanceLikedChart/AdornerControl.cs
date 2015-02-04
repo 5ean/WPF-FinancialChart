@@ -29,11 +29,11 @@ namespace FinancialHistoricLineChart
 
         public static readonly DependencyProperty HorizontalAdornerPlacementProperty =
             DependencyProperty.Register("HorizontalAdornerPlacement", typeof(AdornerPlacement), typeof(AdornedControl),
-                new FrameworkPropertyMetadata(HorizontalAdornerPlacement_PropertyChanged));
+                new FrameworkPropertyMetadata(AdornerPlacement.Inside));
 
         public static readonly DependencyProperty VerticalAdornerPlacementProperty =
             DependencyProperty.Register("VerticalAdornerPlacement", typeof(AdornerPlacement), typeof(AdornedControl),
-                new FrameworkPropertyMetadata(VerticalAdornerPlacement_PropertyChanged));
+                new FrameworkPropertyMetadata(AdornerPlacement.Inside));
 
         public static readonly DependencyProperty AdornerOffsetXProperty =
             DependencyProperty.Register("AdornerOffsetX", typeof(double), typeof(AdornedControl));
@@ -169,27 +169,30 @@ namespace FinancialHistoricLineChart
 
         private static void AdornerContent_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        private static void HorizontalAdornerPlacement_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void VerticalAdornerPlacement_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
+            AdornedControl c = (AdornedControl)d;
+            c.ShowOrHideAdornerInternal();
         }
 
         private static void HideAdornerCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            AdornedControl c = (AdornedControl)sender;
+            c.HideAdorner();
+        }
+
+        private void HideAdorner()
+        {
+            IsAdornerVisible = Visibility.Hidden;
         }
 
         private static void ShowAdornerCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            AdornedControl c = (AdornedControl)sender;
+            c.ShowAdorner();
+        }
+
+        private void ShowAdorner()
+        {
+            IsAdornerVisible = Visibility.Visible;
         }
 
         #endregion even handlers
