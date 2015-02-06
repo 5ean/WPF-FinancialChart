@@ -182,10 +182,11 @@ namespace FinancialHistoricLineChart
             }
             point = (StockInfo)list.Find(p => p.Date.Equals(mouseXPositionInChartUnits));
             point.PointVisibility = Visibility.Visible;
-            
+            setVirticalLine(mousePositionInPixels.X, mouseXPositionInChartUnits);
+            setHorizontalLine(mousePositionInPixels.Y, mouseYPositionInChartUnits);
         }
 
-        private FrameworkElement FindDescendantWithName(DependencyObject root, string name)
+                private FrameworkElement FindDescendantWithName(DependencyObject root, string name)
         {
             var numChildren = VisualTreeHelper.GetChildrenCount(root);
             for (var i = 0; i < numChildren; i++)
@@ -203,6 +204,34 @@ namespace FinancialHistoricLineChart
                 }
             }
             return null;
+        }
+
+        private void setVirticalLine(double xPosition, DateTime value)
+        {
+            virticalLine.X1 = xPosition;
+            virticalLine.X2 = xPosition;
+            virticalLine.Y1 = -10.0;
+            virticalLine.Y2 = _plotArea.ActualHeight;
+            xLabel.Text = value.Date.ToString("ddMMMyyyy");
+            xLabel.Foreground = new SolidColorBrush(Colors.Blue);
+            xLabel.SetValue(Canvas.LeftProperty, xPosition + 5.0);
+            xLabel.SetValue(Canvas.TopProperty, _plotArea.ActualHeight - 20);
+            _plotArea.Children.Add(virticalLine);
+            _plotArea.Children.Add(xLabel);
+        }
+
+        private void setHorizontalLine(double yPosition, double value)
+        {
+            horizontalLine.X1 = -10;
+            horizontalLine.X2 = _plotArea.ActualWidth;
+            horizontalLine.Y1 = yPosition;
+            horizontalLine.Y2 = yPosition;
+            yLabel.Text = value.ToString("C");
+            yLabel.Foreground = new SolidColorBrush(Colors.Blue);
+            yLabel.SetValue(Canvas.TopProperty, yPosition);
+            yLabel.SetValue(Canvas.LeftProperty, 5.0);
+            _plotArea.Children.Add(horizontalLine);
+            _plotArea.Children.Add(yLabel);
         }
     }
 }
