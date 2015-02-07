@@ -54,6 +54,7 @@
             <CheckBox Name="Ave120CheckBox" Content="120 Day Nove Trend" Grid.Column="3" Margin="9,0,0,0" VerticalAlignment="Center" Height="21" Foreground="Red"  FontWeight="Bold" Checked="Ave120CheckBox_Checked" Unchecked="Ave120CheckBox_Unchecked"/>
             <ComboBox Name="dateWindow" HorizontalAlignment="Left" Margin="10,-1,1,1" VerticalAlignment="Top" Width="120" Grid.Column="4" SelectionChanged="dateWindow_SelectionChanged">
                 <ComboBoxItem>All</ComboBoxItem>
+                <ComboBoxItem>2 Year</ComboBoxItem>
                 <ComboBoxItem>1 Year</ComboBoxItem>
                 <ComboBoxItem>6 Months</ComboBoxItem>
                 <ComboBoxItem>3 Months</ComboBoxItem>

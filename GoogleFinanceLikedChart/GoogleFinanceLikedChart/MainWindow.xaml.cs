@@ -30,6 +30,7 @@ namespace FinancialHistoricLineChart
 
         public MainWindow()
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
             InitializeComponent();
             list = DataAccess.GetStockInfoList();
             this.DataContext = list;
@@ -103,18 +104,22 @@ namespace FinancialHistoricLineChart
                     this.DataContext = list;
                     break;
                 case 1:
-                    date = list.Max(p=> p.Date).Date.AddYears(-1);
+                    date = list.Max(p => p.Date).Date.AddYears(-2);
                     this.DataContext = list.FindAll(p => p.Date >= date);
                     break;
                 case 2:
-                    date = list.Max(p=> p.Date).Date.AddMonths(-6);
+                    date = list.Max(p=> p.Date).Date.AddYears(-1);
                     this.DataContext = list.FindAll(p => p.Date >= date);
                     break;
                 case 3:
-                    date = list.Max(p=> p.Date).Date.AddMonths(-3);
+                    date = list.Max(p=> p.Date).Date.AddMonths(-6);
                     this.DataContext = list.FindAll(p => p.Date >= date);
                     break;
                 case 4:
+                    date = list.Max(p=> p.Date).Date.AddMonths(-3);
+                    this.DataContext = list.FindAll(p => p.Date >= date);
+                    break;
+                case 5:
                     date = list.Max(p=> p.Date).Date.AddMonths(-1);
                     this.DataContext = list.FindAll(p => p.Date >= date);
                     break;
