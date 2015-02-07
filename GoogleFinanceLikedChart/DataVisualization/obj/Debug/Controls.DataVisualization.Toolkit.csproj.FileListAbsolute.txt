@@ -1,0 +1,13 @@
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.XML
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\System.Windows.Controls.DataVisualization.Toolkit_MarkupCompile.cache
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\System.Windows.Controls.DataVisualization.Toolkit_MarkupCompile.lref
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\Themes\Generic.baml
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\System.Windows.Controls.DataVisualization.Toolkit.g.resources
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\System.Windows.Controls.DataVisualization.Properties.Resources.resources
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\Controls.DataVisualization.Toolkit.csproj.GenerateResource.Cache
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\GitHub\Repo\WPF\WPF-FinancialChart\GoogleFinanceLikedChart\DataVisualization\obj\Debug\Controls.DataVisualization.Toolkit.csprojResolveAssemblyReference.cache
