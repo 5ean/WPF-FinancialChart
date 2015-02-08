@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialHistoricLineChart", "GoogleFinanceLikedChart\FinancialHistoricLineChart.csproj", "{CB2ED566-6E19-46DA-A546-8FD17D531BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls.DataVisualization.Toolkit", "DataVisualization\Controls.DataVisualization.Toolkit.csproj", "{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release with Code Analysis|Any CPU = Release with Code Analysis|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB2ED566-6E19-46DA-A546-8FD17D531BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB2ED566-6E19-46DA-A546-8FD17D531BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB2ED566-6E19-46DA-A546-8FD17D531BDC}.Release with Code Analysis|Any CPU.ActiveCfg = Release|Any CPU
+		{CB2ED566-6E19-46DA-A546-8FD17D531BDC}.Release with Code Analysis|Any CPU.Build.0 = Release|Any CPU
+		{CB2ED566-6E19-46DA-A546-8FD17D531BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB2ED566-6E19-46DA-A546-8FD17D531BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.ActiveCfg = Release with Code Analysis|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release with Code Analysis|Any CPU.Build.0 = Release with Code Analysis|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066FB4E3-8F9C-42D0-9982-8B1F238FAF63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
