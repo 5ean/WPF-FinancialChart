@@ -32,16 +32,16 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>About this chart</h3>
-        <p>Recently several friends asked me about how to develop a linear chart for real time risk monitoring and historical risk data display. I publish this demo just in case more friends need it. This demo usees <a href="http://wpftoolkit.codeplex.com/" class="user-mention">WPF Toolkit</a> which is an open source wpf extension library from Microsoft. I added DataVisualization source code as a project in this demo for better understanding the internal implementation, however I did not change it. So if you want, you also can simply refer <a href="http://wpftoolkit.codeplex.com/" class="user-mention">WPF Toolkit</a> directly</p>
+        <p>Recently, several friends asked me about how to develop a linear chart for real time risk monitoring and historical risk data display. I decided to publish this demo just in case more of my friends need it. This demo uses <a href="http://wpftoolkit.codeplex.com/" class="user-mention">WPF Toolkit</a> which is an open source WPF extension library from Microsoft. I added DataVisualization source code as a project in this demo for better understanding the internal implementation. However, I did not change it. So if you want, you also can simply refer <a href="http://wpftoolkit.codeplex.com/" class="user-mention">WPF Toolkit</a> directly</p>
 
         <h3>Historical Chart</h3>
-        <p>This demo is a historical linear chart. Later on I will publish a real time chart and the real time chart performance analysis. Compare with original WPF Toolkit linear chart, I developed an adorner control to implement the cursors on the lines, as well as the labels beside the cursors. The demo also illustrates how to add crosshairs on the chart. The demo looks like this：</p>
+        <p>This demo is a historical linear chart. Later on, I will publish a real time chart and the real time chart performance analysis. Compared with original WPF Toolkit linear chart, I developed an adorner control to implement cursors on the lines, as well as labels beside the cursors. This demo also illustrates how to add crosshairs on the chart. Here is an example:</p>
         <hr />
           <img src="images/Capture1.JPG" alt="historical linear chart" width="900" height="500" style="margin-left:-50px; margin-right:-50px" />
         <hr />
         
         <h3>Adorner Control</h3>
-        <p>An Adorner is a custom FrameworkElement that is bound to a UIElement. Adorners are rendered in an AdornerLayer, which is a rendering surface that is always on top of the adorned element or a collection of adorned elements. Rendering of an adorner is independent from rendering of the UIElement that the adorner is bound to. An adorner is typically positioned relative to the element to which it is bound, using the standard 2-D coordinate origin located at the upper-left of the adorned element.</p>
+        <p>An Adorner is a custom FrameworkElement that is bound to a UIElement. Adorners are rendered in an AdornerLayer, which is a rendering surface that is always on top of the adorned element or a collection of adorned elements. Rendering of an adorner is independent from rendering of the UIElement that the adorner is bound to. An adorner is typically positioned relative to the element to which it is bound, using the standard 2-D coordinate origin located at the upper left of the adorned element.</p>
         <p>Common applications for adorners include:</p>
           <ul>
               <li>Adding functional handles to a UIElement that enable a user to manipulate the element in some way (resize, rotate, reposition, etc.).</li>
